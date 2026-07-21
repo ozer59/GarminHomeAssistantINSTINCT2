@@ -18,7 +18,7 @@
 
 # Etiquette
 
-Thank you to all those who have provided positive feedback, code and language translations, you have made the product better. The majority of users that contact us are grateful and we thank you for your courtesy. Sadly not everyone is as reasonable or polite. What follows is what the authors consider reasonable behaviour from users. We are getting a sufficient number of examples that it feels like something has to be called out! There are some users who feel "entitled" to be discourteous, as evidences by some of the Garmin application reviews.
+Thank you to all those who have provided positive feedback, code and language translations, you have made the product better. The majority of users that contact us are grateful and we thank you for your courtesy. Sadly not everyone is as reasonable or polite. What follows is what the authors consider reasonable behaviour from users. We are getting a sufficient number of examples that it feels like something has to be called out! There are some users who feel "entitled" to be discourteous, as evidences by some of the Garmin application reviews. Its too easy to express an uninformed opinion publicaly these days without being held accountable and having to defend it as reasonable.
 
 > [!IMPORTANT]
 > **The intended audience for this application are those comfortable with configuring a HomeAssistant** (e.g. editing the YAML configuration files) and debugging why URLs don't work. It does not require programming skills, but the menu is configured via JSON which feels like "coding" (more like "describing"). If you are not comfortable with this relatively low level of configuration, you may like to try other Garmin applications instead.
@@ -199,6 +199,25 @@ Developer reply:
 Answer: Make sure you meet the [minimum requirements for being a user](#etiquette) please!
 
 (This last email trail does beg the question how this user ever expected to be able to work with their own Home Assistant server...)
+
+**This one is interesting for a different reason.**
+
+<img src="images/etiquette/2026-07-20_GHA_Opinionated_Italian.png" width="70%" title="Complicated for hobbyist">
+
+> "I reverse malware for a living"
+
+- Putting yourself on a pedestal?
+- Are we supposed to credit you that you opinion carries additional weight?
+
+> "this is complicated for a hobbyist"
+
+Not for himself, but speaking on behalf of other users, how noble? Except the app is rated 4.7 in the store presently, so plenty of other users, including 'hobbyists', seem to disagree.
+- Why did you feel you had to post an opinion on behalf of _any_ other users?
+- Are hobbyists not as clever as you?
+
+You're free to voice your opinion, but if you do it publicly, I have the freedom to reply and point out the flaws in your argument.
+
+Do you not have a clue about writing significant applications in constrained space (i.e. including older devices), and therefore the limits that imposes on the application, e.g. menu building?
 
 ---
 

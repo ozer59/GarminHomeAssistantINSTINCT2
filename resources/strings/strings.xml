@@ -36,7 +36,7 @@
   <string id="NoMenu">Menu definition error, check the instructions.</string>
   <string id="NoPhone" scope="glance">No Phone connection.</string>
   <string id="NoPhoneNoCache" scope="glance">No phone connection, no cached menu.</string>
-  <string id="NoResponse">No Response, check secure HTTPS connection</string>
+  <string id="NoResponse">No Response, check Internet connection</string>
   <string id="TimedOut">Request timed out</string>
   <string id="PinInputLocked">PIN input locked for</string>
   <string id="PotentialError">Potential Error</string>

@@ -60,4 +60,4 @@
 |   3.12  | Amended GPS accuracy values used by the background service. |
 |   3.13  | Added support for new devices: `d2mach2pro`, `fr170`, `fr170m`, `fr70`. |
 |   3.14  | Numeric items now support `tap_action.data` fields so service call options like `transition` are catered for. See the documentation on [Additional Action Data](https://github.com/house-of-abbey/GarminHomeAssistant/blob/main/examples/Numeric.md#additional-action-data). This features has been provided by [@StumblingGamer](https://github.com/StumblingGamer). Now prevent PIN enabled menu items from being enabled on non-touch screen devices. The PIN must be removed for the menu item to function. Fix for initialising numeric pickers with no user defined template. |
-|   3.15  | The prevention of PIN enabled menu items on non-touch screen devices was improperly implemented, this version provides a bug fix. |
+|   3.15  | The prevention of PIN enabled menu items on non-touch screen devices was improperly implemented, this version provides a bug fix. Added an error message to catch _insecure HTTP_ usage. |

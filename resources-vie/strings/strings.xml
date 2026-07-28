@@ -36,6 +36,7 @@
   <string id="NoAPIKey" scope="glance">Không có khóa API trong cài đặt ứng dụng.</string>
   <string id="NoApiUrl" scope="glance">Không có URL API trong cài đặt ứng dụng.</string>
   <string id="NoConfigUrl" scope="glance">Không có URL cấu hình trong cài đặt ứng dụng.</string>
+  <string id="NoHTTPS">Không có phản hồi, sử dụng kết nối HTTPS an toàn.</string>
   <string id="NoInternet">Không có kết nối internet.</string>
   <string id="NoJson">Không có JSON được trả về từ yêu cầu HTTP.</string>
   <string id="NoMenu">Lỗi định nghĩa menu, kiểm tra hướng dẫn.</string>

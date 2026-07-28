@@ -37,6 +37,7 @@
   <string id="NoAPIKey" scope="glance">Geen API-sleutel in de toepassingsinstellingen.</string>
   <string id="NoApiUrl" scope="glance">Geen API-URL in de toepassingsinstellingen.</string>
   <string id="NoConfigUrl" scope="glance">Geen configuratie-URL in de toepassingsinstellingen.</string>
+  <string id="NoHTTPS">Geen antwoord, gebruik een beveiligde HTTPS-verbinding.</string>
   <string id="NoInternet">Geen internetverbinding.</string>
   <string id="NoJson">Geen JSON ontvangen van het HTTP-verzoek.</string>
   <string id="NoMenu">Menudefinitiefout, controleer de instructies.</string>

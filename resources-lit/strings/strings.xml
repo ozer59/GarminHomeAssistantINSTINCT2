@@ -36,6 +36,7 @@
   <string id="NoAPIKey" scope="glance">Nėra API rakto programos nustatymuose.</string>
   <string id="NoApiUrl" scope="glance">Nėra API URL programos nustatymuose.</string>
   <string id="NoConfigUrl" scope="glance">Nėra konfigūracijos URL programos nustatymuose.</string>
+  <string id="NoHTTPS">Jokio atsakymo, naudokite saugų HTTPS ryšį.</string>
   <string id="NoInternet">Nėra interneto ryšio.</string>
   <string id="NoJson">HTTP užklausa negrąžino JSON.</string>
   <string id="NoMenu">Meniu apibrėžimo klaida, patikrinkite instrukcijas.</string>

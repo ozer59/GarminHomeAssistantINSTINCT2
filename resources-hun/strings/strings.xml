@@ -37,6 +37,7 @@
   <string id="NoAPIKey" scope="glance">Nincs API kulcs az alkalmazás beállításaiban.</string>
   <string id="NoApiUrl" scope="glance">Nincs API URL az alkalmazás beállításaiban.</string>
   <string id="NoConfigUrl" scope="glance">Nincs konfigurációs URL az alkalmazás beállításaiban.</string>
+  <string id="NoHTTPS">Nincs válasz, használjon biztonságos HTTPS kapcsolatot.</string>
   <string id="NoInternet">Nincs internetkapcsolat.</string>
   <string id="NoJson">A HTTP kérés nem adott vissza JSON-t.</string>
   <string id="NoMenu">Menüdefiníciós hiba, ellenőrizze az utasításokat.</string>

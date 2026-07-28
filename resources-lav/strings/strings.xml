@@ -36,6 +36,7 @@
   <string id="NoAPIKey" scope="glance">Lietojumprogrammas iestatījumos nav API atslēgas.</string>
   <string id="NoApiUrl" scope="glance">Lietojumprogrammas iestatījumos nav API URL.</string>
   <string id="NoConfigUrl" scope="glance">Lietojumprogrammas iestatījumos nav konfigurācijas URL.</string>
+  <string id="NoHTTPS">Nav atbildes, izmantojiet drošu HTTPS savienojumu.</string>
   <string id="NoInternet">Nav interneta savienojuma.</string>
   <string id="NoJson">HTTP pieprasījums neatgrieza JSON.</string>
   <string id="NoMenu">Izvēlnes definīcijas kļūda, pārbaudiet instrukcijas.</string>

@@ -37,6 +37,7 @@
   <string id="NoAPIKey" scope="glance">Tidak ada kunci API di pengaturan aplikasi.</string>
   <string id="NoApiUrl" scope="glance">Tidak ada URL API di pengaturan aplikasi.</string>
   <string id="NoConfigUrl" scope="glance">Tidak ada URL konfigurasi di pengaturan aplikasi.</string>
+  <string id="NoHTTPS">Tidak ada respons, gunakan koneksi HTTPS aman.</string>
   <string id="NoInternet">Tidak ada koneksi internet.</string>
   <string id="NoJson">Tidak ada JSON yang diterima dari permintaan HTTP.</string>
   <string id="NoMenu">Kesalahan definisi menu, periksa instruksi.</string>

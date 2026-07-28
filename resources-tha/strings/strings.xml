@@ -36,6 +36,7 @@
   <string id="NoAPIKey" scope="glance">ไม่มีคีย์ API ในการตั้งค่าแอปพลิเคชัน</string>
   <string id="NoApiUrl" scope="glance">ไม่มี URL API ในการตั้งค่าแอปพลิเคชัน</string>
   <string id="NoConfigUrl" scope="glance">ไม่มี URL การกำหนดค่าในการตั้งค่าแอปพลิเคชัน</string>
+  <string id="NoHTTPS">ไม่มีการตอบกลับ ใช้การเชื่อมต่อ HTTPS ที่ปลอดภัย</string>
   <string id="NoInternet">ไม่มีการเชื่อมต่ออินเทอร์เน็ต</string>
   <string id="NoJson">ไม่มี JSON ส่งคืนจากคำขอ HTTP</string>
   <string id="NoMenu">ข้อผิดพลาดในการกำหนดเมนู โปรดตรวจสอบคำแนะนำ</string>

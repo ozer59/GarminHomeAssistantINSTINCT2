@@ -36,6 +36,7 @@
   <string id="NoAPIKey" scope="glance">應用程式設定中沒有 API 密鑰。</string>
   <string id="NoApiUrl" scope="glance">應用程式設定中沒有 API URL。</string>
   <string id="NoConfigUrl" scope="glance">應用程式設定中沒有配置 URL。</string>
+  <string id="NoHTTPS">沒有回應，請使用安全的 HTTPS 連線。</string>
   <string id="NoInternet">沒有互聯網連接。</string>
   <string id="NoJson">HTTP 請求未返回 JSON。</string>
   <string id="NoMenu">選單定義錯誤，請檢查說明。</string>

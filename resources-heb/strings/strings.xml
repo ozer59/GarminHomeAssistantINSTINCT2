@@ -36,6 +36,7 @@
   <string id="NoAPIKey" scope="glance">אין מפתח API בהגדרות היישום.</string>
   <string id="NoApiUrl" scope="glance">אין כתובת URL של ה-API בהגדרות היישום.</string>
   <string id="NoConfigUrl" scope="glance">אין כתובת URL לתצורה בהגדרות היישום.</string>
+  <string id="NoHTTPS">אין תגובה, השתמש בחיבור HTTPS מאובטח.</string>
   <string id="NoInternet">אין חיבור לאינטרנט.</string>
   <string id="NoJson">לא התקבל JSON מבקשת HTTP.</string>
   <string id="NoMenu">שגיאת הגדרת תפריט, בדוק את ההוראות.</string>

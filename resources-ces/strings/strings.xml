@@ -36,6 +36,7 @@
   <string id="NoAPIKey" scope="glance">Žádný klíč API v nastavení aplikace.</string>
   <string id="NoApiUrl" scope="glance">Žádná URL API v nastavení aplikace.</string>
   <string id="NoConfigUrl" scope="glance">Žádná konfigurační URL v nastavení aplikace.</string>
+  <string id="NoHTTPS">Žádná odpověď, použijte zabezpečené připojení HTTPS.</string>
   <string id="NoInternet">Žádné připojení k internetu.</string>
   <string id="NoJson">Žádný JSON se nevrátil z požadavku HTTP.</string>
   <string id="NoMenu">Chyba definice menu, zkontrolujte pokyny.</string>

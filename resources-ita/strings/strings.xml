@@ -38,6 +38,7 @@
   <string id="NoApiUrl" scope="glance">Nessun URL API nelle impostazioni dell'applicazione.</string>
   <string id="NoConfigUrl" scope="glance">Nessun URL di configurazione nelle impostazioni
     dell'applicazione.</string>
+  <string id="NoHTTPS">Nessuna risposta, usa una connessione HTTPS sicura.</string>
   <string id="NoInternet">Nessuna connessione Internet.</string>
   <string id="NoJson">Nessun JSON ricevuto dalla richiesta HTTP.</string>
   <string id="NoMenu">Errore di definizione del menu, controlla le istruzioni.</string>

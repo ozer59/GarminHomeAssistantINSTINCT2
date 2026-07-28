@@ -36,6 +36,7 @@
   <string id="NoAPIKey" scope="glance">Няма ключ за API в настройките на приложението.</string>
   <string id="NoApiUrl" scope="glance">Няма URL адрес на API в настройките на приложението.</string>
   <string id="NoConfigUrl" scope="glance">Няма URL адрес за конфигурация в настройките на приложението.</string>
+  <string id="NoHTTPS">Няма отговор, използвайте защитена HTTPS връзка.</string>
   <string id="NoInternet">Няма интернет връзка.</string>
   <string id="NoJson">Не е върнат JSON от HTTP заявка.</string>
   <string id="NoMenu">Грешка в дефиницията на менюто, проверете инструкциите.</string>

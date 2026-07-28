@@ -39,6 +39,7 @@
   <string id="NoApiUrl" scope="glance">No hay URL de API en la configuración de la aplicación.</string>
   <string id="NoConfigUrl" scope="glance">No hay URL de configuración en la configuración de la
     aplicación.</string>
+  <string id="NoHTTPS">Sin respuesta, utilice una conexión HTTPS segura.</string>
   <string id="NoInternet">Sin conexión a Internet.</string>
   <string id="NoJson">No se recibió JSON de la solicitud HTTP.</string>
   <string id="NoMenu">Error en la definición del menú, verifique las instrucciones.</string>

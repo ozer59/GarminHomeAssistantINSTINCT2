@@ -36,6 +36,7 @@
   <string id="NoAPIKey" scope="glance">Kein API-Schlüssel in den App-Einstellungen hinterlegt.</string>
   <string id="NoApiUrl" scope="glance">Keine API-URL in den App-Einstellungen hinterlegt.</string>
   <string id="NoConfigUrl" scope="glance">Keine Menükonfigurations-URL (JSON) in den App-Einstellungen hinterlegt.</string>
+  <string id="NoHTTPS">Keine Antwort, sichere HTTPS-Verbindung verwenden.</string>
   <string id="NoInternet">Keine Internetverbindung.</string>
   <string id="NoJson">Keine JSON-Datei aus der HTTP-Anfrage zurückbekommen.</string>
   <string id="NoMenu">Fehler in der Menüdefinition, Anweisungen prüfen.</string>
@@ -81,9 +82,9 @@
   <string id="SettingsUserHttpHeader">Zusätzlicher HTTP-Header</string>
   <string id="SettingsUserHttpHeaderDescription">Einige Home Assistant-Installationen erfordern die Angabe eines benutzerdefinierten HTTP-Headers, um zu funktionieren.</string>
   <string id="SettingsUserHttpHeader1Name">Zusätzlicher HTTP-Header 1: Name</string>
-  <string id="SettingsUserHttpHeader1Value">Zusätzlicher HTTP-Header 1: Wert</string>
+  <string id="SettingsUserHttpHeader1Value">Zusätzlicher HTTP-Header 1: Value</string>
   <string id="SettingsUserHttpHeader2Name">Zusätzlicher HTTP-Header 2: Name</string>
-  <string id="SettingsUserHttpHeader2Value">Zusätzlicher HTTP-Header 2: Wert</string>
+  <string id="SettingsUserHttpHeader2Value">Zusätzlicher HTTP-Header 2: Value</string>
   <string id="SettingsClearWebhookId">Neu mit Home Assistant verbinden (Webhook-ID löschen, siehe Fehlerbehebungshandbuch).</string>
   <string id="SettingsWebhookId">(Nur lesen) Die vom Gerät erstellte Webhook-ID für Hintergrund-Updates. Kann zum Debuggen benötigt werden.</string>
 </strings>

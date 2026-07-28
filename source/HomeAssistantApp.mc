@@ -195,6 +195,13 @@ class HomeAssistantApp extends Application.AppBase {
                 }
                 break;
 
+            case Communications.SECURE_CONNECTION_REQUIRED:
+                // System.println("HomeAssistantApp onReturnFetchMenuConfig() Response Code: SECURE_CONNECTION_REQUIRED, check API URL setting.");
+                if (mIsApp) {
+                    ErrorView.show(WatchUi.loadResource($.Rez.Strings.NoHTTPS) as Lang.String);
+                }
+                break;
+
             case 404:
                 // System.println("HomeAssistantApp onReturnFetchMenuConfig() Response Code: 404, page not found. Check Configuration URL setting.");
                 if (mIsApp) {
@@ -508,6 +515,13 @@ class HomeAssistantApp extends Application.AppBase {
                 myTimer.start(method(:updateMenuItems), Globals.scApiBackoffMs, false);
                 break;
 
+            case Communications.SECURE_CONNECTION_REQUIRED:
+                // System.println("HomeAssistantApp onReturnFetchMenuConfig() Response Code: SECURE_CONNECTION_REQUIRED, check API URL setting.");
+                if (mIsApp) {
+                    ErrorView.show(WatchUi.loadResource($.Rez.Strings.NoHTTPS) as Lang.String);
+                }
+                break;
+
             case 404:
                 // System.println("HomeAssistantApp onReturnCheckMenuConfig() Response Code: 404, page not found. Check API URL setting.");
                 ErrorView.show(WatchUi.loadResource($.Rez.Strings.ApiUrlNotFound) as Lang.String);
@@ -795,6 +809,13 @@ class HomeAssistantApp extends Application.AppBase {
                 // System.println("HomeAssistantApp onReturnFetchApiStatus() Response Code: INVALID_HTTP_BODY_IN_NETWORK_RESPONSE, check JSON is returned.");
                 if (mIsApp) {
                     ErrorView.show(WatchUi.loadResource($.Rez.Strings.NoJson) as Lang.String);
+                }
+                break;
+
+            case Communications.SECURE_CONNECTION_REQUIRED:
+                // System.println("HomeAssistantApp onReturnFetchMenuConfig() Response Code: SECURE_CONNECTION_REQUIRED, check API URL setting.");
+                if (mIsApp) {
+                    ErrorView.show(WatchUi.loadResource($.Rez.Strings.NoHTTPS) as Lang.String);
                 }
                 break;
 

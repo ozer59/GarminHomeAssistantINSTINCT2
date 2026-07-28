@@ -38,6 +38,7 @@
   <string id="NoAPIKey" scope="glance">Немає ключа API в налаштуваннях програми.</string>
   <string id="NoApiUrl" scope="glance">Немає URL-адреси API в налаштуваннях програми.</string>
   <string id="NoConfigUrl" scope="glance">Немає URL-адреси конфігурації в налаштуваннях програми.</string>
+  <string id="NoHTTPS">Немає відповіді, використовуйте безпечне HTTPS-з'єднання.</string>
   <string id="NoInternet">Немає підключення до Інтернету.</string>
   <string id="NoJson">HTTP-запит не повернув JSON.</string>
   <string id="NoMenu">Помилка визначення меню, перевірте інструкції.</string>

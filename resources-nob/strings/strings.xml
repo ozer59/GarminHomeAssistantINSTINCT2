@@ -37,6 +37,7 @@
   <string id="NoAPIKey" scope="glance">Ingen API-nøkkel i applikasjonsinnstillingene.</string>
   <string id="NoApiUrl" scope="glance">Ingen API-URL i applikasjonsinnstillingene.</string>
   <string id="NoConfigUrl" scope="glance">Ingen konfigurasjons-URL i applikasjonsinnstillingene.</string>
+  <string id="NoHTTPS">Ingen svar, bruk sikker HTTPS-tilkobling.</string>
   <string id="NoInternet">Ingen internettforbindelse.</string>
   <string id="NoJson">Ingen JSON returnert fra HTTP-forespørsel.</string>
   <string id="NoMenu">Menydefinisjonsfeil, sjekk instruksjonene.</string>

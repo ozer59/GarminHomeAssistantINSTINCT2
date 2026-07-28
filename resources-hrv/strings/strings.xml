@@ -37,6 +37,7 @@
   <string id="NoAPIKey" scope="glance">Nema API ključa u postavkama aplikacije.</string>
   <string id="NoApiUrl" scope="glance">Nema API URL-a u postavkama aplikacije.</string>
   <string id="NoConfigUrl" scope="glance">Nema URL-a konfiguracije u postavkama aplikacije.</string>
+  <string id="NoHTTPS">Nema odgovora, koristite sigurnu HTTPS vezu.</string>
   <string id="NoInternet">Nema internetske veze.</string>
   <string id="NoJson">Nije primljen JSON odgovor na HTTP zahtjev.</string>
   <string id="NoMenu">Pogreška u definiciji izbornika, provjerite upute.</string>

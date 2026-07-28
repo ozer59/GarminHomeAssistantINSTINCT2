@@ -37,6 +37,7 @@
   <string id="NoAPIKey" scope="glance">Nicio cheie API în setările aplicației.</string>
   <string id="NoApiUrl" scope="glance">Niciun URL API în setările aplicației.</string>
   <string id="NoConfigUrl" scope="glance">Niciun URL de configurare în setările aplicației.</string>
+  <string id="NoHTTPS">Niciun răspuns, utilizați o conexiune HTTPS securizată.</string>
   <string id="NoInternet">Nicio conexiune la internet.</string>
   <string id="NoJson">Niciun JSON nu a fost returnat de la cererea HTTP.</string>
   <string id="NoMenu">Eroare de definire a meniului, verificați instrucțiunile.</string>

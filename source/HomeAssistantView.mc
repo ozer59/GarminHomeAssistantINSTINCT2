@@ -76,49 +76,32 @@ class HomeAssistantView extends WatchUi.Menu2 {
                     }
                 }
                 if (type != null && name != null && enabled) {
-                    if (type.equals("toggle") && entity != null) {
-                        addItem(HomeAssistantMenuItemFactory.create().toggle(
-                            name,
-                            entity,
-                            content,
-                            {
-                                :exit    => exit,
-                                :confirm => confirm,
-                                :pin     => pin
-                            }
-                        ));
-                    } else if (type.equals("tap") && action != null) {
+                    if (pin && !System.getDeviceSettings().isTouchScreen) {
                         addItem(HomeAssistantMenuItemFactory.create().tap(
-                            name,
-                            entity,
-                            content,
-                            action,
+                            "PIN requires Touchscreen",
+                            null,
+                            null,
+                            null,
                             data,
                             {
-                                :exit    => exit,
-                                :confirm => confirm,
-                                :pin     => pin
+                                :exit    => false,
+                                :confirm => false,
+                                :pin     => false
                             }
                         ));
-                    } else if (type.equals("template") && content != null) {
-                        // NB. "template" is deprecated in the schema and remains only for backward compatibility. All menu items can now use templates, so the replacement is "info".
-                        // The exit option is dependent on the type of template.
-                        if (tap_action == null) {
-                            // No exit from an information only item
-                            addItem(HomeAssistantMenuItemFactory.create().tap(
+                    } else {
+                        if (type.equals("toggle") && entity != null) {
+                            addItem(HomeAssistantMenuItemFactory.create().toggle(
                                 name,
                                 entity,
                                 content,
-                                action,
-                                data,
                                 {
-                                    :exit    => false,
+                                    :exit    => exit,
                                     :confirm => confirm,
                                     :pin     => pin
                                 }
                             ));
-                        } else {
-                            // You may exit from template item with a 'tap_action'.
+                        } else if (type.equals("tap") && action != null) {
                             addItem(HomeAssistantMenuItemFactory.create().tap(
                                 name,
                                 entity,
@@ -131,9 +114,39 @@ class HomeAssistantView extends WatchUi.Menu2 {
                                     :pin     => pin
                                 }
                             ));
-                        }
-                    } else if (type.equals("numeric") && action != null) {
-                        if (System.getDeviceSettings().isTouchScreen) {
+                        } else if (type.equals("template") && content != null) {
+                            // NB. "template" is deprecated in the schema and remains only for backward compatibility. All menu items can now use templates, so the replacement is "info".
+                            // The exit option is dependent on the type of template.
+                            if (tap_action == null) {
+                                // No exit from an information only item
+                                addItem(HomeAssistantMenuItemFactory.create().tap(
+                                    name,
+                                    entity,
+                                    content,
+                                    action,
+                                    data,
+                                    {
+                                        :exit    => false,
+                                        :confirm => confirm,
+                                        :pin     => pin
+                                    }
+                                ));
+                            } else {
+                                // You may exit from template item with a 'tap_action'.
+                                addItem(HomeAssistantMenuItemFactory.create().tap(
+                                    name,
+                                    entity,
+                                    content,
+                                    action,
+                                    data,
+                                    {
+                                        :exit    => exit,
+                                        :confirm => confirm,
+                                        :pin     => pin
+                                    }
+                                ));
+                            }
+                        } else if (type.equals("numeric") && action != null) {
                             // Numeric items are only actionable on touch screen devices.
                             if (tap_action != null) {
                                 var picker = tap_action.get("picker") as Lang.Dictionary?;
@@ -153,36 +166,23 @@ class HomeAssistantView extends WatchUi.Menu2 {
                                     ));
                                 }
                             }
-                        } else {
+                        } else if (type.equals("info") && content != null) {
+                            // Cannot exit from a non-actionable information only menu item.
                             addItem(HomeAssistantMenuItemFactory.create().tap(
-                                "PIN requires Touchscreen",
-                                null,
-                                null,
-                                null,
+                                name,
+                                entity,
+                                content,
+                                action,
                                 data,
                                 {
                                     :exit    => false,
-                                    :confirm => false,
-                                    :pin     => false
+                                    :confirm => confirm,
+                                    :pin     => pin
                                 }
                             ));
+                        } else if (type.equals("group")) {
+                            addItem(HomeAssistantMenuItemFactory.create().group(items[i], content));
                         }
-                    } else if (type.equals("info") && content != null) {
-                        // Cannot exit from a non-actionable information only menu item.
-                        addItem(HomeAssistantMenuItemFactory.create().tap(
-                            name,
-                            entity,
-                            content,
-                            action,
-                            data,
-                            {
-                                :exit    => false,
-                                :confirm => confirm,
-                                :pin     => pin
-                            }
-                        ));
-                    } else if (type.equals("group")) {
-                        addItem(HomeAssistantMenuItemFactory.create().group(items[i], content));
                     }
                 }
             }

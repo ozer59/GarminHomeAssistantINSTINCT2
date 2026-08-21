@@ -152,7 +152,7 @@ To verify if you have this issue you can use a tool like [SSL Shoppers's SSL Che
 
 ## Wi-Fi Not Working
 
-This is probably a TLS issue on your Home Assistant server. Please see [Wi-Fi "limits of use"](Wi-Fi.md#limits-of-use) section. You may be able to amend your server's TLS settings. As the application is dependent on the Garmin SDK, there is no application code that can be changed to fix the TLS version. The problem is external to this application and specific to your IT setup, therefore you are supporting yourself to resolve it.
+This is probably a TLS issue associated with HTTPS. Please see [Wi-Fi "limits of use"](Wi-Fi.md#limits-of-use) section. You may be able to amend your server's TLS settings. As the application is dependent on the Garmin SDK, there is no application code that can be changed to fix the TLS version. The problem is external to this application and specific to your IT setup, therefore you are supporting yourself to resolve it.
 
 ## Online Web-based Editor
 

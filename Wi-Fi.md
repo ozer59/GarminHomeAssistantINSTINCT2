@@ -22,23 +22,23 @@ With version 3.0 onwards the application now includes the ability to temporarily
 
    <div style="margin:30px;padding:20px;background-color:lightgrey;border:1px solid black;border-radius: 10px;">
 
-   On some Garmin devices, the HTTPS handshake is performed using **TLS 1.2**. If your server or proxy enforces a higher minimum (e.g., TLS 1.3), you will encounter an SSL handshake error with the message:  
+   On some Garmin devices, the HTTPS handshake is performed using **TLS 1.2**. If your server or proxy enforces a higher minimum (e.g., TLS 1.3), you will encounter an SSL handshake error with the message:
 
    ```text
    HTTP request returned error code = 0
    ```
 
-   This limitation only affects **Wi-Fi/LTE connections**. When connected over **Bluetooth**, the watch routes requests through the paired phone, which handles the TLS handshake and supports newer TLS versions (such as 1.3) without issue.  
+   This limitation only affects **Wi-Fi/LTE connections**. When connected over **Bluetooth**, the watch routes requests through the paired phone, which handles the TLS handshake and supports newer TLS versions (such as 1.3) without issue.
 
-   To fix this, lower the minimum TLS setting to allow TLS 1.2. For example, if you are using **Cloudflare Tunneling**, go to:  
-   `SSL/TLS → Edge Certificates → Minimum TLS Version`  
+   To fix this, lower the minimum TLS setting to allow TLS 1.2. For example, if you are using **Cloudflare Tunneling**, go to:
+   `SSL/TLS → Edge Certificates → Minimum TLS Version`
    and set it to **at most TLS 1.2**. _Reducing below TLS 1.2 is not recommended due to security risks._
    </div>
 
    Another user, [@xhemart](https://github.com/xhemart), [reports some research](https://github.com/house-of-abbey/GarminHomeAssistant/issues/292#issuecomment-5360598790) to further diagnose this issue:
 
    <div style="margin:30px;padding:20px;background-color:lightgrey;border:1px solid black;border-radius: 10px;">
-   
+
    I ran a direct test against my own Nabu Casa endpoint with openssl s_client, forcing specific cipher suites, and it turns out **TLS version was never the actual constraint**. My server accepts TLS 1.2 just fine (confirmed with `ECDHE-RSA-AES128-GCM-SHA256`). What it does _not_ accept is any cipher suite using plain RSA key exchange (no forward secrecy) — regardless of whether the bulk cipher is a modern AEAD one or an old CBC/SHA1 one:
 
    Test                                  | Forced Configuration              | Result

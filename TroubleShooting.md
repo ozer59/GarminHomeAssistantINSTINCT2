@@ -407,7 +407,7 @@ Store-Id: 61c91d28-ec5e-438d-9f83-39e9f45b199d
 Store-Version: 30
 Filename: DCRL0437
 Appname: HomeAssistant
-Stack: 
+Stack:
   - pc: 0x10003b5e
 ```
 

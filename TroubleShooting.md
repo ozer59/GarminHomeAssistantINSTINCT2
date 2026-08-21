@@ -150,6 +150,10 @@ To verify if you have this issue you can use a tool like [SSL Shoppers's SSL Che
 1. Failure to copy & paste keys and URLs leading to minor and hard to see errors in strings, even with protestations they are the same! (No they weren't...)
 2. Accessibility of URLs, hence the above help guide.
 
+## Wi-Fi Not Working
+
+This is probably a TLS issue on your Home Assistant server. Please see [Wi-Fi "limits of use"](Wi-Fi.md#limits-of-use) section. You may be able to amend your server's TLS settings. As the application is dependent on the Garmin SDK, there is no application code that can be changed to fix the TLS version. The problem is external to this application and specific to your IT setup, therefore you are supporting yourself to resolve it.
+
 ## Online Web-based Editor
 
 The [editor](https://house-of-abbey.github.io/GarminHomeAssistant/web/) provides the following functions:

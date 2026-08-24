@@ -15,7 +15,7 @@
 <strings>
   <string id="ApiFlood">API calls too rapid. Please slow down your requests.</string>
   <string id="ApiUrlNotFound">URL not found. Potential API URL error in settings.</string>
-  <string id="AppName" scope="glance">HA INSTINCT TEST</string>
+  <string id="AppName" scope="glance">HA Instinct</string>
   <string id="Available" scope="glance">Available</string>
   <string id="Cached" scope="glance">Cached</string>
   <string id="Checking" scope="glance">Checking...</string>

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GarminHomeAssistant Instinct 2",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "title": { "type": "string" },
+    "glance": {
+      "type": "object",
+      "properties": {
+        "type": { "enum": ["status", "info"] },
+        "content": { "type": "string" }
+      },
+      "required": ["type"],
+      "additionalProperties": false
+    },
+    "items": { "$ref": "#/$defs/items" }
+  },
+  "required": ["items"],
+  "additionalProperties": false,
+  "$defs": {
+    "icon": {
+      "type": "string",
+      "enum": ["car", "light", "alarm", "solar", "pause", "battery"]
+    },
+    "tap_action": {
+      "type": "object",
+      "properties": {
+        "action": { "type": "string" },
+        "data": { "type": "object" },
+        "confirm": { "oneOf": [{"type":"boolean"},{"type":"string"}] },
+        "pin": { "type": "boolean" },
+        "exit": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "toggle": {
+      "type": "object",
+      "properties": {
+        "entity": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "const": "toggle" },
+        "icon": { "$ref": "#/$defs/icon" },
+        "content": { "type": "string" },
+        "tap_action": { "$ref": "#/$defs/tap_action" },
+        "enabled": { "type": "boolean" }
+      },
+      "required": ["entity", "name", "type"],
+      "additionalProperties": false
+    },
+    "tap": {
+      "type": "object",
+      "properties": {
+        "entity": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "const": "tap" },
+        "icon": { "$ref": "#/$defs/icon" },
+        "content": { "type": "string" },
+        "tap_action": { "$ref": "#/$defs/tap_action" },
+        "enabled": { "type": "boolean" }
+      },
+      "required": ["name", "type"],
+      "additionalProperties": false
+    },
+    "info": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "const": "info" },
+        "icon": { "$ref": "#/$defs/icon" },
+        "content": { "type": "string" },
+        "enabled": { "type": "boolean" }
+      },
+      "required": ["name", "type", "content"],
+      "additionalProperties": false
+    },
+    "group": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "title": { "type": "string" },
+        "type": { "const": "group" },
+        "icon": { "$ref": "#/$defs/icon" },
+        "content": { "type": "string" },
+        "items": { "$ref": "#/$defs/items" },
+        "enabled": { "type": "boolean" }
+      },
+      "required": ["name", "type", "items"],
+      "additionalProperties": false
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/$defs/toggle" },
+          { "$ref": "#/$defs/tap" },
+          { "$ref": "#/$defs/info" },
+          { "$ref": "#/$defs/group" }
+        ]
+      }
+    }
+  }
+}

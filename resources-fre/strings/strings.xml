@@ -22,7 +22,7 @@
   <string id="ApiFlood">Appels API trop rapide. Veuillez signaler cette erreur avec les détails de l'appareil.</string>
   <string id="ApiUrlNotFound">URL introuvable. L'URL de l'API est potentiellement erronée dans les
     paramètres.</string>
-  <string id="AppName" scope="glance">HomeAssistant</string>
+  <string id="AppName" scope="glance">HA Instinct</string>
   <string id="Available" scope="glance">Disponible</string>
   <string id="Cached" scope="glance">Mis en cache</string>
   <string id="Checking" scope="glance">Vérification...</string>

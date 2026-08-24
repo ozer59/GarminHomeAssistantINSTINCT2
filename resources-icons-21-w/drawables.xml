@@ -21,4 +21,12 @@
     <bitmap id="TapTypeIcon" filename="tap_type.svg"/>
     <bitmap id="InfoTypeIcon" filename="info_type.svg"/>
     <bitmap id="NumericTypeIcon" filename="numeric_type.svg"/>
+
+    <!-- Instinct 2 custom monochrome menu icons -->
+    <bitmap id="CarIcon" filename="car.svg"/>
+    <bitmap id="LightIcon" filename="light.svg"/>
+    <bitmap id="AlarmIcon" filename="alarm.svg"/>
+    <bitmap id="SolarIcon" filename="solar.svg"/>
+    <bitmap id="PauseIcon" filename="pause.svg"/>
+    <bitmap id="BatteryIcon" filename="battery.svg"/>
 </drawables>

@@ -4,20 +4,15 @@
 //   See https://github.com/house-of-abbey/GarminHomeAssistant/blob/main/LICENSE
 //
 //-----------------------------------------------------------------------------------
-//
-// GarminHomeAssistant is a Garmin IQ application written in Monkey C and routinely
-// tested on a Venu 2 device. The source code is provided at:
-//            https://github.com/house-of-abbey/GarminHomeAssistant
-//
-// P A Abbey & J D Abbey & Someone0nEarth, 17 November 2023
-//
-//-----------------------------------------------------------------------------------
 
 using Toybox.Application;
 using Toybox.Lang;
 using Toybox.WatchUi;
 
 //! MenuItems Factory class.
+//!
+//! Instinct 2 fork: menu items may provide an optional JSON "icon" value:
+//! car, light, alarm, solar, pause, battery.
 //
 class HomeAssistantMenuItemFactory {
     private var mMenuItemOptions      as Lang.Dictionary;
@@ -25,44 +20,62 @@ class HomeAssistantMenuItemFactory {
     private var mGroupTypeIcon        as WatchUi.Bitmap;
     private var mInfoTypeIcon         as WatchUi.Bitmap;
     private var mNumericTypeIcon      as WatchUi.Bitmap;
+    private var mCarIcon              as WatchUi.Bitmap;
+    private var mLightIcon            as WatchUi.Bitmap;
+    private var mAlarmIcon            as WatchUi.Bitmap;
+    private var mSolarIcon            as WatchUi.Bitmap;
+    private var mPauseIcon            as WatchUi.Bitmap;
+    private var mBatteryIcon          as WatchUi.Bitmap;
     private var mHomeAssistantService as HomeAssistantService;
 
     private static var instance;
 
-    //! Class Constructor
-    //
     private function initialize() {
         mMenuItemOptions = { :alignment => Settings.getMenuAlignment() };
 
-        mTapTypeIcon = new WatchUi.Bitmap({
-            :rezId => $.Rez.Drawables.TapTypeIcon,
-            :locX  => WatchUi.LAYOUT_HALIGN_CENTER,
-            :locY  => WatchUi.LAYOUT_VALIGN_CENTER
-        });
+        mTapTypeIcon = makeBitmap($.Rez.Drawables.TapTypeIcon);
+        mGroupTypeIcon = makeBitmap($.Rez.Drawables.GroupTypeIcon);
+        mInfoTypeIcon = makeBitmap($.Rez.Drawables.InfoTypeIcon);
+        mNumericTypeIcon = makeBitmap($.Rez.Drawables.NumericTypeIcon);
 
-        mGroupTypeIcon = new WatchUi.Bitmap({
-            :rezId => $.Rez.Drawables.GroupTypeIcon,
-            :locX  => WatchUi.LAYOUT_HALIGN_CENTER,
-            :locY  => WatchUi.LAYOUT_VALIGN_CENTER
-        });
-
-        mInfoTypeIcon = new WatchUi.Bitmap({
-            :rezId => $.Rez.Drawables.InfoTypeIcon,
-            :locX  => WatchUi.LAYOUT_HALIGN_CENTER,
-            :locY  => WatchUi.LAYOUT_VALIGN_CENTER
-        });
-
-        mNumericTypeIcon = new WatchUi.Bitmap({
-            :rezId => $.Rez.Drawables.NumericTypeIcon,
-            :locX  => WatchUi.LAYOUT_HALIGN_CENTER,
-            :locY  => WatchUi.LAYOUT_VALIGN_CENTER
-        });
+        mCarIcon = makeBitmap($.Rez.Drawables.CarIcon);
+        mLightIcon = makeBitmap($.Rez.Drawables.LightIcon);
+        mAlarmIcon = makeBitmap($.Rez.Drawables.AlarmIcon);
+        mSolarIcon = makeBitmap($.Rez.Drawables.SolarIcon);
+        mPauseIcon = makeBitmap($.Rez.Drawables.PauseIcon);
+        mBatteryIcon = makeBitmap($.Rez.Drawables.BatteryIcon);
 
         mHomeAssistantService = new HomeAssistantService();
     }
 
-    //! Create the one and only instance of this class.
-    //
+    private function makeBitmap(rezId) as WatchUi.Bitmap {
+        return new WatchUi.Bitmap({
+            :rezId => rezId,
+            :locX  => WatchUi.LAYOUT_HALIGN_CENTER,
+            :locY  => WatchUi.LAYOUT_VALIGN_CENTER
+        });
+    }
+
+    private function resolveIcon(iconName as Lang.String?, fallback as WatchUi.Bitmap) as WatchUi.Bitmap {
+        if (iconName == null) {
+            return fallback;
+        }
+        if (iconName.equals("car")) {
+            return mCarIcon;
+        } else if (iconName.equals("light")) {
+            return mLightIcon;
+        } else if (iconName.equals("alarm")) {
+            return mAlarmIcon;
+        } else if (iconName.equals("solar")) {
+            return mSolarIcon;
+        } else if (iconName.equals("pause")) {
+            return mPauseIcon;
+        } else if (iconName.equals("battery")) {
+            return mBatteryIcon;
+        }
+        return fallback;
+    }
+
     static function create() as HomeAssistantMenuItemFactory {
         if (instance == null) {
             instance = new HomeAssistantMenuItemFactory();
@@ -70,17 +83,11 @@ class HomeAssistantMenuItemFactory {
         return instance;
     }
 
-    //! Toggle menu item.
-    //!
-    //! @param label     Menu item label.
-    //! @param entity_id Home Assistant Entity ID (optional)
-    //! @param template  Template for Home Assistant to render (optional)
-    //! @param options   Menu item options to be passed on, including both SDK and menu options, e.g. exit, confirm & pin.
-    //
     function toggle(
         label     as Lang.String or Lang.Symbol,
         entity_id as Lang.String?,
         template  as Lang.String?,
+        iconName  as Lang.String?,
         options   as {
             :exit    as Lang.Boolean,
             :confirm as Lang.Boolean,
@@ -91,6 +98,7 @@ class HomeAssistantMenuItemFactory {
         for (var i = 0; i < keys.size(); i++) {
             options[keys[i]] = mMenuItemOptions.get(keys[i]);
         }
+        options[:icon] = resolveIcon(iconName, mTapTypeIcon);
         return new HomeAssistantToggleMenuItem(
             label,
             template,
@@ -99,21 +107,13 @@ class HomeAssistantMenuItemFactory {
         );
     }
 
-    //! Tap menu item.
-    //!
-    //! @param label     Menu item label.
-    //! @param entity_id Home Assistant Entity ID (optional)
-    //! @param template  Template for Home Assistant to render (optional)
-    //! @param action    Action to run on Home Assistant (optional)
-    //! @param data      Sourced from the menu JSON, this is the `data` field from the `tap_action` field.
-    //! @param options   Menu item options to be passed on, including both SDK and menu options, e.g. exit, confirm & pin.
-    //
     function tap(
         label     as Lang.String or Lang.Symbol,
         entity_id as Lang.String?,
         template  as Lang.String?,
         action    as Lang.String?,
         data      as Lang.Dictionary?,
+        iconName  as Lang.String?,
         options   as {
             :exit    as Lang.Boolean,
             :confirm as Lang.Boolean,
@@ -131,8 +131,9 @@ class HomeAssistantMenuItemFactory {
         for (var i = 0; i < keys.size(); i++) {
             options[keys[i]] = mMenuItemOptions.get(keys[i]);
         }
+
         if (action != null) {
-            options.put(:icon, mTapTypeIcon);
+            options[:icon] = resolveIcon(iconName, mTapTypeIcon);
             return new HomeAssistantTapMenuItem(
                 label,
                 template,
@@ -142,7 +143,7 @@ class HomeAssistantMenuItemFactory {
                 mHomeAssistantService
             );
         } else {
-            options[:icon] = mInfoTypeIcon;
+            options[:icon] = resolveIcon(iconName, mInfoTypeIcon);
             return new HomeAssistantTapMenuItem(
                 label,
                 template,
@@ -153,11 +154,7 @@ class HomeAssistantMenuItemFactory {
             );
         }
     }
-    //! Numeric menu item.
-    //!
-    //! @param definition Items array from the JSON that defines this sub menu.
-    //! @param template   Template for Home Assistant to render (optional)
-    //
+
     function numeric(
         label     as Lang.String or Lang.Symbol,
         entity_id as Lang.String?,
@@ -165,6 +162,7 @@ class HomeAssistantMenuItemFactory {
         action    as Lang.String?,
         data      as Lang.Dictionary?,
         picker    as Lang.Dictionary,
+        iconName  as Lang.String?,
         options   as {
             :exit    as Lang.Boolean,
             :confirm as Lang.Boolean,
@@ -183,7 +181,7 @@ class HomeAssistantMenuItemFactory {
         for (var i = 0; i < keys.size(); i++) {
             options[keys[i]] = mMenuItemOptions.get(keys[i]);
         }
-        options[:icon] = mNumericTypeIcon;
+        options[:icon] = resolveIcon(iconName, mNumericTypeIcon);
         return new HomeAssistantNumericMenuItem(
             label,
             template,
@@ -194,19 +192,16 @@ class HomeAssistantMenuItemFactory {
             mHomeAssistantService
         );
     }
-    //! Group menu item.
-    //!
-    //! @param definition Items array from the JSON that defines this sub menu.
-    //! @param template   Template for Home Assistant to render (optional)
-    //
+
     function group(
         definition as Lang.Dictionary,
-        template   as Lang.String?
+        template   as Lang.String?,
+        iconName   as Lang.String?
     ) as WatchUi.MenuItem {
         return new HomeAssistantGroupMenuItem(
             definition,
             template,
-            mGroupTypeIcon,
+            resolveIcon(iconName, mGroupTypeIcon),
             mMenuItemOptions
         );
     }

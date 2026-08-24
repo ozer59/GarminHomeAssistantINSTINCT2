@@ -15,7 +15,7 @@
 <strings>
   <string id="ApiFlood">API calls too rapid. Please slow down your requests.</string>
   <string id="ApiUrlNotFound">URL not found. Potential API URL error in settings.</string>
-  <string id="AppName" scope="glance">HomeAssistant</string>
+  <string id="AppName" scope="glance">HA INSTINCT TEST</string>
   <string id="Available" scope="glance">Available</string>
   <string id="Cached" scope="glance">Cached</string>
   <string id="Checking" scope="glance">Checking...</string>
@@ -68,7 +68,7 @@
   <string id="SettingsPollDelay">Additional poll delay (in seconds). Adds a delay between the status update of all menu items.</string>
   <string id="SettingsConfirmTimeout">After this time (in seconds), a confirmation dialog for an action is automatically closed and the action is cancelled. Set to 0 to disable the timeout.</string>
   <string id="SettingsPin">4-digit PIN to be used for all actions that require it (0000-9999).</string>
-  <string id="SettingsPinError">Please configure a valid 4-digit numeric PIN between 0000 and 9999 in the application settings.</string>
+  <string id="SettingsPinError">Please configure a valid 4-digit numeric PIN between 0000-9999 in the application settings.</string>
   <string id="SettingsTextAlign">Left (off) or Right (on) Menu Alignment.</string>
   <string id="SettingsLeftToRight">Left to right</string>
   <string id="SettingsRightToLeft">Right to Left</string>

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ozer59/GarminHomeAssistantINSTINCT2/instinct2-custom-icons/config.instinct2.schema.json",
+  "title": "Maison",
+  "glance": {
+    "type": "status"
+  },
+  "items": [
+    {
+      "name": "Buzz",
+      "title": "ID.Buzz",
+      "type": "group",
+      "icon": "car",
+      "items": [
+        {
+          "entity": "script.buzz_priorite_voiture",
+          "name": "Voiture",
+          "type": "tap",
+          "icon": "car",
+          "tap_action": {
+            "action": "script.turn_on"
+          }
+        },
+        {
+          "entity": "script.buzz_priorite_solaire",
+          "name": "Solaire",
+          "type": "tap",
+          "icon": "solar",
+          "tap_action": {
+            "action": "script.turn_on"
+          }
+        },
+        {
+          "entity": "script.buzz_pause",
+          "name": "Pause",
+          "type": "tap",
+          "icon": "pause",
+          "tap_action": {
+            "action": "script.turn_on"
+          }
+        },
+        {
+          "entity": "input_boolean.nexblue_limite_44kw",
+          "name": "Limite batterie",
+          "type": "toggle",
+          "icon": "battery"
+        }
+      ]
+    },
+    {
+      "name": "Eclairages",
+      "title": "Eclairages",
+      "type": "group",
+      "icon": "light",
+      "items": [
+        {
+          "entity": "light.bd_led_entree",
+          "name": "LED Entree",
+          "type": "toggle",
+          "icon": "light"
+        },
+        {
+          "entity": "light.bd_led_jardin",
+          "name": "LED Jardin",
+          "type": "toggle",
+          "icon": "light"
+        }
+      ]
+    },
+    {
+      "name": "Alarme",
+      "title": "Alarme",
+      "type": "group",
+      "icon": "alarm",
+      "items": [
+        {
+          "entity": "switch.alarme_entree_garmin",
+          "name": "Entree",
+          "type": "toggle",
+          "icon": "alarm",
+          "tap_action": {
+            "confirm": true
+          }
+        },
+        {
+          "entity": "switch.alarme_exterieur_garmin",
+          "name": "Exterieur",
+          "type": "toggle",
+          "icon": "alarm",
+          "tap_action": {
+            "confirm": true
+          }
+        },
+        {
+          "entity": "switch.alarme_garage_garmin",
+          "name": "Garage",
+          "type": "toggle",
+          "icon": "alarm",
+          "tap_action": {
+            "confirm": true
+          }
+        }
+      ]
+    }
+  ]
+}

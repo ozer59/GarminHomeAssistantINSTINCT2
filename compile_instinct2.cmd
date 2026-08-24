@@ -1,8 +1,8 @@
 @echo off
 setlocal
 
-rem GarminHomeAssistantINSTINCT2 - build Instinct 2 PRG
-rem Requires Garmin Connect IQ SDK installed and an existing developer_key.der
+rem HA Instinct - build Instinct 2 PRG
+rem Requires Garmin Connect IQ SDK and developer_key.der at project root.
 
 set /p SDK_ROOT=<"%APPDATA%\Garmin\ConnectIQ\current-sdk.cfg"
 if "%SDK_ROOT%"=="" (
@@ -20,17 +20,16 @@ if not exist "%OUT%" mkdir "%OUT%"
 
 if not exist "%KEY%" (
   echo ERROR: developer_key.der is missing in the project folder.
-  echo Generate it once with the Monkey C VS Code extension or OpenSSL.
   pause
   exit /b 1
 )
 
-echo Building GarminHomeAssistant for Instinct 2...
+echo Building HA Instinct for Instinct 2...
 
 "%SDK_BIN%\monkeyc.bat" ^
   -f "%SRC%monkey.jungle" ^
   -d instinct2 ^
-  -o "%OUT%\HomeAssistant-instinct2.prg" ^
+  -o "%OUT%\HA-Instinct-instinct2.prg" ^
   -y "%KEY%" ^
   -w
 
@@ -43,5 +42,5 @@ if errorlevel 1 (
 
 echo.
 echo BUILD OK:
-echo %OUT%\HomeAssistant-instinct2.prg
+echo %OUT%\HA-Instinct-instinct2.prg
 pause
